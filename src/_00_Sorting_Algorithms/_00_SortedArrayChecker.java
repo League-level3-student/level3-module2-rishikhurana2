@@ -1,5 +1,7 @@
 package _00_Sorting_Algorithms;
 
+import java.util.ArrayList;
+
 public class _00_SortedArrayChecker {
 	//1. Write a static method called intArraySorted. 
 	//   This method takes in an array of integers
@@ -29,5 +31,42 @@ public class _00_SortedArrayChecker {
 	//   The method returns true if the String
 	//   array is in alphabetical order and false otherwise
 	//   (Use the compareTo(String) method)
-
+	static boolean intArraySorted(ArrayList<Integer> integers) {
+		boolean swap = true;
+		while (swap) {
+			swap = false;
+			for (int i = 0; i < integers.size() - 1; i++) {
+				if (integers.get(i) > integers.get(i + 1)) {
+					int temp = integers.get(i);
+					integers.set(i, integers.get(i + 1));
+					integers.set(i + 1, temp);
+					swap = true;
+				}
+			}
+		}
+		for (int i = 0; i < integers.size(); i++) {
+			System.out.println(integers.get(i));
+		}
+		return true;
+	}
+	static boolean doubleArraySorted(ArrayList<Double> doubles) {
+		boolean swap = true;
+		while (swap) {
+			swap = false;
+			for (int i = 0; i < doubles.size() - 1; i++) {
+				if (doubles.get(i) > doubles.get(i + 1)) {
+					double temp = doubles.get(i);
+					doubles.set(i, doubles.get(i + 1));
+					doubles.set(i + 1, temp);
+					swap = true;
+				}
+			}
+		}
+		return true;
+	}
+	static boolean charArraySorted(ArrayList<Character> characters) {
+		
+		return false;
+		
+	}
 }
